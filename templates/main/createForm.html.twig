@@ -5,6 +5,13 @@
 <div class="container">
     <div class = 'row'> 
         <h3 class='mt-5 mb-5'>Formulaire de création</h3>
+        {#Affichage d'un message flash#}
+        {% for message in app.flashes('notice') %}
+            <div class="alert alert-success">
+                {{message}}
+            </div>
+        {% endfor %}
+        {#Affichage d'un formulaire Symfony#}
         <div class='col-md-6 offset-md-3'>
         {{ form_start(form) }}
             <div class ="form-group">
